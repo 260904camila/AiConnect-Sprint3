@@ -1,38 +1,53 @@
-# Projeto DevOps - Implementação na Azure
+# AiConnect 
 
-## Descrição
+Este projeto é uma API para gerenciar clientes e pedidos, com automação de deploy usando Azure DevOps. Ele foi feito para demonstrar o uso de pipelines CI/CD e boas práticas DevOps, facilitando o deploy e a manutenção.
 
-Este projeto é uma aplicação simples desenvolvida como parte do curso de DevOps, com o objetivo de implementar um sistema na nuvem utilizando a Azure. Ele inclui uma API com operações CRUD (Create, Read, Update, Delete) e um banco de dados SQL hospedado na Azure.
+## O que este projeto faz?
 
-## Tecnologias Utilizadas
+- Cria e gerencia dados de clientes e pedidos usando uma API.
+- Inclui duas tabelas principais no banco de dados: `Clientes` e `Pedidos`.
+- Implementa automação de deploy e atualizações pelo Azure.
 
-- **Azure**: Para hospedagem da API e do banco de dados.
-- **C# / .NET**: Linguagem de programação e framework utilizados no backend.
-- **SQL Database**: Banco de dados relacional hospedado na Azure.
-- **Azure DevOps**: Para pipelines de CI/CD e gerenciamento de código.
+## Tecnologias
 
-## Funcionalidades
+- **C#** e **.NET** para o código
+- **Azure SQL Database** para o banco de dados
+- **Azure DevOps** para CI/CD (pipeline)
+- **Azure App Service** para hospedar a aplicação
 
-- API Restful com operações CRUD.
-- Banco de dados SQL na Azure.
-- Integração com Azure DevOps para automação de build e deploy.
-
-## Como Rodar o Projeto
+## Como Instalar
 
 1. Clone o repositório:
+
    ```bash
-   git clone https://github.com/260904camila/seu-repositorio.git
+   git clone https://github.com/260904camila/AiConnect-Sprint3.git
+   cd AiConnect-Sprint3
    ```
 
-2. Configure as variáveis de ambiente com os dados de conexão da Azure.
+2. Instale as dependências:
 
-3. Execute o projeto:
+   ```bash
+   dotnet restore
+   ```
+
+3. Rode a aplicação:
+
    ```bash
    dotnet run
    ```
 
-4. Utilize ferramentas como o Postman para testar as operações CRUD da API.
+## Configuração
 
-## Contribuições
+- **Banco de Dados**: Rode o script SQL em `sql-scripts/setup.sql` no Azure SQL Database para configurar as tabelas.
+- **Pipeline CI/CD**: Importe o arquivo `pipeline/azure-pipelines.yml` no Azure DevOps para configurar o pipeline.
 
-Sinta-se à vontade para contribuir com melhorias ou abrir issues para discussão!
+## Como Usar a API
+
+Principais endpoints disponíveis:
+
+- `GET /api/clientes` - Lista todos os clientes
+- `POST /api/clientes` - Adiciona um cliente
+- `GET /api/pedidos` - Lista todos os pedidos
+- `POST /api/pedidos` - Adiciona um pedido
+
+
